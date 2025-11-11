@@ -1,38 +1,72 @@
 # @bhagyeshhjaiin/TreeSelect
 
 
-A lightweight and extensible React **TreeSelect** component.
+# 🌳 TreeSelect
+
+A lightweight and customizable React component for hierarchical tree selection.
+
+[![npm version](https://img.shields.io/npm/v/@bhagyeshhjaiin/treeselect.svg)](https://www.npmjs.com/package/@bhagyeshhjaiin/treeselect)
+[![npm downloads](https://img.shields.io/npm/dm/@bhagyeshhjaiin/treeselect.svg)](https://www.npmjs.com/package/@bhagyeshhjaiin/treeselect)
+[![License](https://img.shields.io/github/license/bhagyeshhjaiin/TreeSelect.svg)](LICENSE)
 
 
-## 🚀 Installation
+
+## 🎥 Preview
+
+![TreeSelect Preview](assets/treeselect-demo.gif)
+
+> _The above GIF demonstrates the expandable tree structure and selection behavior._
+
+## 🚀 Tech Stack
+
+![React](https://img.shields.io/badge/React-18.x-61dafb?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?logo=vite&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)
+
+
+## 📦 Installation
 ```bash
-npm install @bhagyeshhjaiin/TreeSelect
+npm install @bhagyeshhjaiin/treeselect
+# or
+yarn add @bhagyeshhjaiin/treeselect
 ```
+
 ## 🧩 Usage
 ```tsx
-import { TreeSelect } from '@bhagyeshhjaiin/TreeSelect';
-import '@bhagyeshhjaiin/TreeSelect/dist/style.css';
+import React from "react";
+import { TreeSelect } from "@bhagyeshhjaiin/treeselect";
 
-const data = [
-    { id: 1, label: 'Parent 1', children: [{ id: 2, label: 'Child 1' }] }
+const treeData = [
+  {
+    id: 1,
+    name: "Parent 1",
+    children: [
+      { id: 2, name: "Child 1" },
+      { id: 3, name: "Child 2" },
+    ],
+  },
 ];
 
-<TreeSelect data={data} onSelect={(id) => console.log(id)} />
+export default function App() {
+  const handleSelect = (selectedIds: number[]) => {
+    console.log(selectedIds);
+  };
+
+  return <TreeSelect data={treeData} onSelect={handleSelect} />;
+}
+
 ```
-## 🧱 Development
-```bash
-npm install
-npm run dev
-```
-## 📦 Build
-```bash
-npm run build
-```
-## 🚀 Publish
-```bash
-npm version patch
-git push --follow-tags
-npm publish --access public
-```
+
+## ⚙️ Properties / Attributes
+| Prop          | Type                      | Description                     | Required |
+| ------------- | ------------------------- | ------------------------------- | -------- |
+| `data`        | `TreeNode[]`              | Hierarchical data structure     | ✅        |
+| `onSelect`    | `(ids: number[]) => void` | Callback when selection changes | ✅        |
+| `multiSelect` | `boolean`                 | Enable multiple selections      | ❌        |
+| `defaultIds`  | `number[]`                | Default selected node IDs       | ❌        |
+
+
 ---
 MIT © Bhagyeshh Jaiin
