@@ -1,0 +1,33 @@
+.tree-select-container {
+    font-family: system-ui, sans-serif;
+    font-size: 14px;
+}
+
+
+.tree-select ul {
+    list-style: none;
+    margin-left: 1rem;
+    padding-left: 0;
+}
+
+
+.tree-node {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 2px 0;
+}
+
+
+.toggle {
+    display: inline-block;
+    width: 18px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+.label:hover {
+    color: #0078ff;
+}
