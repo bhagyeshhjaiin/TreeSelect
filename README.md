@@ -29,7 +29,9 @@ A lightweight and customizable React component for hierarchical tree selection.
 ## 📦 Installation
 ```bash
 npm install @bhagyeshhjaiin/treeselect
-# or
+```
+### or
+```bash
 yarn add @bhagyeshhjaiin/treeselect
 ```
 
